@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search in Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<label for="searchInput">Enter a value to search:</label>
+<input type="number" id="searchInput" min="0" max="198">
+<button onclick="searchValue()">Search</button>
+<p id="result"></p>
+
+<script>
+    const array = Array.from({ length: 100 }, (_, index) => index * 2);
+
+    function searchValue() {
+        const searchInput = document.getElementById("searchInput").value;
+        const resultElement = document.getElementById("result");
+
+        if (array.includes(parseInt(searchInput))) {
+            resultElement.textContent = `Value ${searchInput} found in the array.`;
+        } else {
+            resultElement.textContent = `Value ${searchInput} not found in the array.`;
+        }
+    }
+</script>
+
+</body>
+</html>

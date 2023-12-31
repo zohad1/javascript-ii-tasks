@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Words</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    const inputText = prompt("Enter a line of text:");
+    const words = inputText.split(/\s+/).filter(word => word.length > 0);
+
+    const sortOrder = prompt("Sort in ascending (A) or descending (D) order?").toUpperCase();
+    let sortedWords;
+
+    if (sortOrder === 'A') {
+        sortedWords = words.sort();
+    } else if (sortOrder === 'D') {
+        sortedWords = words.sort((a, b) => b.localeCompare(a));
+    } else {
+        alert("Invalid input for sorting order. Please enter 'A' for ascending or 'D' for descending.");
+        throw new Error("Invalid sorting order");
+    }
+
+    alert(`Words in ${sortOrder === 'A' ? 'ascending' : 'descending'} order:\n${sortedWords.join(', ')}`);
+</script>
+
+</body>
+</html>

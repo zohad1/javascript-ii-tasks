@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetical Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    const inputText = prompt("Enter a line of text:");
+    const words = inputText.split(/\s+/).filter(word => word.length > 0);
+    const sortedWords = words.sort();
+
+    alert(`Words in alphabetical order:\n${sortedWords.join(', ')}`);
+</script>
+
+</body>
+</html>

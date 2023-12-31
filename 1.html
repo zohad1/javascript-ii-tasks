@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #output {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        #output div {
+            width: 30%;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="output">
+    <div id="strings"></div>
+    <div id="getMethods"></div>
+    <div id="newArguments"></div>
+    <div id="setMethods"></div>
+</div>
+
+<script>
+    function start() {
+        var current = new Date();
+
+        document.getElementById("strings").innerHTML =
+            "<p>toString: " + current.toString() + "</p>" +
+            "<p>toLocaleString: " + current.toLocaleString() + "</p>" +
+            "<p>toUTCString: " + current.toUTCString() + "</p>" +
+            "<p>valueOf: " + current.valueOf() + "</p>";
+
+        document.getElementById("getMethods").innerHTML =
+            "<p>getDate: " + current.getDate() + "</p>" +
+            "<p>getDay: " + current.getDay() + "</p>" +
+            "<p>getMonth: " + current.getMonth() + "</p>" +
+            "<p>getFullYear: " + current.getFullYear() + "</p>" +
+            "<p>getTime: " + current.getTime() + "</p>" +
+            "<p>getHours: " + current.getHours() + "</p>" +
+            "<p>getMinutes: " + current.getMinutes() + "</p>" +
+            "<p>getSeconds: " + current.getSeconds() + "</p>" +
+            "<p>getMilliseconds: " + current.getMilliseconds() + "</p>" +
+            "<p>getTimezoneOffset: " + current.getTimezoneOffset() + "</p>";
+
+        var anotherDate = new Date(2011, 2, 18, 1, 5, 0, 0);
+
+        document.getElementById("newArguments").innerHTML =
+            "<p>Date: " + anotherDate + "</p>";
+
+        anotherDate.setDate(31);
+        anotherDate.setMonth(11);
+        anotherDate.setFullYear(2011);
+        anotherDate.setHours(23);
+        anotherDate.setMinutes(59);
+        anotherDate.setSeconds(59);
+
+        document.getElementById("setMethods").innerHTML =
+            "<p>Modified date: " + anotherDate + "</p>";
+    }
+
+    window.addEventListener("load", start, false);
+</script>
+
+</body>
+</html>
